@@ -1,0 +1,104 @@
+:root {
+    --colorTextos: #fd0000;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    background: url(fondo.jpg);   
+    background-size: cover;
+    background-position: center;
+    height: 650px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1{
+    text-align: center;
+    font-weight: 700;
+}
+
+form{
+    background: #fff;
+    padding: 40px 0;
+    box-shadow: 0 0 6px 0 rgba(250, 1, 1, 0.8);
+    border-radius: 10px;
+}
+
+.form{
+    width: 100%;
+    margin: auto;
+}
+
+form .grupo{
+    position: relative;
+    margin: 45px ;
+}
+
+input{
+    background: none;
+    color: #0202027a;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);
+}
+input:focus{ 
+    outline: none;
+    color: #5e5d5d;
+}
+
+label{
+    color: var(--colorTextos);
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    transition: 0.5s ease all;
+    pointer-events: none;
+}
+
+input:focus~label,
+input:valid~label{
+    top: -14px;
+    font-size: 15px;
+    color: #fd006a;
+}
+
+button{
+    font-family: 'Roboto';
+    background: #4568DC;
+    background: -webkit-linear-gradient(to right, #49da49, #4568DC);
+    background: linear-gradient(to right, #49da49, #4568DC);
+    border: none;
+    display: block;
+    width: 40%;
+    margin: 10px auto;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    border-bottom: 2px solid var(--colorTextos);
+}
+
+@media screen and (max-width:500px){
+    form{
+        width: 80%;
+    }
+}
+
+

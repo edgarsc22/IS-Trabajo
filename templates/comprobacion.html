@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+  <div class="card-header" >NOTA</div>
+  <div class="card-body">
+    <h5 class="card-title">Cuadro marcado de rojo</h4>
+    <p class="card-text">
+      El cuadro macardo de color rojo, identifica un cruce de cursos, 
+      por ende no es recomendable matricularse en ese horario
+    </p>
+  </div>
+</div>
+</div>
+    <table ALIGN="center" id="tablacomprobacion">
+      <thead id="cabezatablacom">
+        <tr>
+          <td id="tdcahora">Hora</td>
+          <td class="tdcacompro">Lunes</td>
+          <td class="tdcacompro">Martes</td>
+          <td class="tdcacompro">Miercoles</td>
+          <td class="tdcacompro">Jueves</td>
+          <td class="tdcacompro">Viernes</td>
+        </tr>
+      </thead>  
+      <tbody><!--con tbody llenaremos los elementos que vienen de la base de datos,pero antes haremos la consulta desde el App.py-->
+        {%for z in range(15)%}
+          <tr>
+            <td class="tdcompro">
+              {{h[z]}}
+            </td>
+            {%for m in diad%}
+              {%set num=namespace(value=0)%}
+              {%for d in t[z]%}
+                {%if d['dia'] == m%}
+                  {% set num.value = num.value + 1 %}
+                {%endif%}
+              {%endfor%}
+              {%if num.value <= 1 %}
+                <td class="tdcompro">
+                  {%for d in t[z]%}
+                    {%if d['dia'] == m%}
+                      {{d['curso']}} - {{d['grupo']}}
+                    {%endif%}
+                  {%endfor%}
+                </td>
+              {%else%}
+                <td class="tderror">
+                  {%for d in t[z]%}
+                    {%if d['dia'] == m%}
+                      {{d['curso']}} - {{d['grupo']}}<br>
+                    {%endif%}
+                  {%endfor%}
+                </td>
+              {%endif%}
+            {%endfor%}
+          </tr>
+        {%endfor%}
+      </tbody>        
+    </table>
+</div>
+{% endblock %}
