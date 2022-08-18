@@ -5,4 +5,4 @@ El  proyecto desarrollado es referido a "La semana de computación " en la escue
 ### Diagrama de Casos de Uso
 ![image](https://github.com/UbertoGC/IS-Trabajo/blob/main/Recursos/diagrama_casos_uso.png)
 ### Diseño de Modelo de Datos 
-![image](https://github.com/UbertoGC/IS-Trabajo/blob/main/Recursos/modelo.png)
+![image](https://github.com/UbertoGC/IS-Trabajo/blob/main/Recursos/modelo.jpg)
