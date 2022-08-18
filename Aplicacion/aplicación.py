@@ -1,5 +1,5 @@
 from flask import Flask, render_template, session, request, redirect, url_for,flash
-from infraestructura import *
+from Infraestructura import infraestructura
 
 app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
@@ -7,7 +7,7 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'hardware+10'
 app.config['MYSQL_DB'] = 'flaskdb'
 
-Infra_Persis_Datos=Infraestructura(app)
+Infra_Persis_Datos=Infraestructure(app)
 
 app.secret_key='mysecretkey'
 
