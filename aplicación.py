@@ -1,5 +1,5 @@
 from flask import Flask, render_template, session, request, redirect, url_for,flash
-from infraestructura import *
+from Infraestructura import infraestructura
 
 app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
