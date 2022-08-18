@@ -1,2 +1,2 @@
  #  :desktop_computer: INGENIERÍA DE SOFTWARE I --PROYECTO CompuWeek :desktop_computer: 
-:label: ##Propósito del Proyecto
+## :label: Propósito del Proyecto
