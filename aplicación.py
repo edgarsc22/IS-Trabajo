@@ -7,7 +7,7 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'hardware+10'
 app.config['MYSQL_DB'] = 'flaskdb'
 
-Infra_Persis_Datos=Infraestructura(app)
+Infra_Persis_Datos=Infraestructure(app)
 
 app.secret_key='mysecretkey'
 
