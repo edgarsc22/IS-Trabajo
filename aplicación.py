@@ -1,5 +1,5 @@
 from flask import Flask, render_template, session, request, redirect, url_for,flash
-from modelo import *
+from infraestructura import *
 
 app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
@@ -7,7 +7,7 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'hardware+10'
 app.config['MYSQL_DB'] = 'flaskdb'
 
-infraestructura=Infraestructura(app)
+Infra_Persis_Datos=Infraestructura(app)
 
 app.secret_key='mysecretkey'
 
@@ -21,7 +21,7 @@ def login():
     return render_template("login.html")
 @app.route('/error',methods=["GET","POST"])
 def ingreso():
-    if infraestructura.existencia_login(request.form['cui'],request.form['password']):
+    if Infra_Persis_Datos.existencia_login(request.form['cui'],request.form['password']):
         session['estado']=True
         return  "Acceso permitido, buenos dias"
     else:
